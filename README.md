@@ -9,7 +9,7 @@
 
 
 
-# Repository Wiki
+# Your Project Wiki
 ## 1. Clone Your Project Repository
 
 _On your local system:_
@@ -22,7 +22,7 @@ _On your local system:_
 
 _From your project repository:_
 
-Run [clone-wiki.sh][clone-wiki.sh] to clone your repository's wiki using the following commands:
+Run [clone-wiki.sh][clone-wiki.sh] to clone your repository's wiki using the following commands^1:
 
 ``` bash
   REMOTE=$(git config --get remote.origin.url)
@@ -82,9 +82,9 @@ _From the gollum-bootstrap directory:_
 
 ## Browsing
 
- 1. Run Gollum ...
-
 _From your project repository:_
+
+ 1. Run Gollum ...
 
 ``` bash
   gollum-bootstrap/bin/gollum wiki/
