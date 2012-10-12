@@ -36,7 +36,7 @@ After cloning, look for the default `Home.md` file under `wiki/`.
 
 ## 3. Edit/Publish Your Wiki
 
-_From your wiki repository:_
+_From your wiki:_
 
 ``` bash
   echo "" >> Home.md
@@ -80,11 +80,11 @@ _From the gollum-bootstrap directory:_
 ```
 
 
-## Browsing
+## 3. View
 
 _From your project repository:_
 
- 1. Run Gollum ...
+ 1. Run Gollum:
 
 ``` bash
   gollum-bootstrap/bin/gollum wiki/
