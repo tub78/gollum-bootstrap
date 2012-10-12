@@ -1,4 +1,11 @@
 
+[Bundler]: http://gembundler.com/
+[Gollum]: https://github.com/github/gollum
+
+[clone-wiki.sh]: https://github.com/tub78/gollum-bootstrap/blob/master/clone-wiki.sh
+[install-bundler.sh]: https://github.com/tub78/gollum-bootstrap/blob/master/install-bundler.sh
+[install-gollum.sh]: https://github.com/tub78/gollum-bootstrap/blob/master/install-gollum.sh
+
 
 # Gollum Bootstrap
 ## Requirements
@@ -33,7 +40,6 @@ Run [clone-wiki.sh][clone-wiki.sh] to clone your repository's wiki using the fol
 
 After cloning, look for the default `Home.md` file under `wiki/`.
 
-
 ## 3. Edit/Publish Your Wiki
 
 _From your wiki:_
@@ -59,14 +65,11 @@ _From your project repository:_
 
 ## 2. Install Gollum
 
-The recommended way to install the Ruby framework [Gollum][Gollum] is with [Bundler][Bundler].  Bundler is a Ruby package manager that installs Gollum via a set of Gems listed in [Gemfile][Gemfile].
-
-[Bundler]: http://gembundler.com/
-[Gollum]: https://github.com/github/gollum
+The recommended way to install the Ruby framework [Gollum][Gollum] is with [Bundler][Bundler].  Bundler is a Ruby package manager that installs Gollum via a set of Gems listed in [Gemfile][https://github.com/tub78/gollum-bootstrap/blob/master/Gemfile].
 
 _From the gollum-bootstrap directory:_
 
- 1. Run [install-bundler.sh][install-bundler.sh] to install Bundler.  This just executes the following command:
+ 1. Run [install-bundler.sh](https://github.com/tub78/gollum-bootstrap/blob/master/install-bundler.sh) to install Bundler.  This just executes the following command:
 
 ``` bash
   gem install bundler
