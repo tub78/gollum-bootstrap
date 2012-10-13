@@ -1,10 +1,10 @@
 #!/bin/bash
 
-bundle install --path ../vendor/bundle
-bundle install --binstubs ../bin
+bundle install --path vendor/bundle
+bundle install --binstubs bin
 
-echo "vendor/" >> ../.gitignore
-echo "bin/" >> ../.gitignore
+echo "vendor/" >> .gitignore
+echo "bin/" >> .gitignore
 
 
 
