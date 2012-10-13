@@ -5,18 +5,16 @@
 [clone-wiki.sh]: https://github.com/tub78/gollum-bootstrap/blob/master/clone-wiki.sh
 [install-bundler.sh]: https://github.com/tub78/gollum-bootstrap/blob/master/install-bundler.sh
 [install-gollum.sh]: https://github.com/tub78/gollum-bootstrap/blob/master/install-gollum.sh
+[commit.sh]: https://github.com/tub78/gollum-bootstrap/blob/master/commit.sh 
+[publish.sh]: https://github.com/tub78/gollum-bootstrap/blob/master/publish.sh 
+[Gemfile]: https://github.com/tub78/gollum-bootstrap/blob/master/Gemfile
 
-
-# Gollum Bootstrap
+# Accessing Your GitHub Repository Wiki
 ## Requirements
 
- 1. Ruby (in particular, the `gem` command)
- 2. Repository hosted on GitHub
- 3. Wiki has been initialized on GitHub
+ 1. Repository hosted on GitHub
+ 2. Wiki has been initialized on GitHub
 
-
-
-# Your Project Wiki
 ## 1. Clone Your Project Repository
 
 _On your local system:_
@@ -25,11 +23,21 @@ _On your local system:_
   git clone https://github.com/USER/PROJECT.git PROJECT-REPO
 ```
 
-## 2. Clone Your Wiki
+## 2. Clone **Gollum Bootstrap**
 
 _From your project repository:_
 
-Run [clone-wiki.sh][clone-wiki.sh] to clone your repository's wiki using the following commands^1:
+``` bash
+  git clone https://github.com/tub78/gollum-bootstrap.git gb
+  echo "gb" >> .gitignore
+```
+
+
+## 3. Clone Your Wiki
+
+_From your project repository:_
+
+Run [clone-wiki.sh][clone-wiki.sh] to clone your repository's wiki using the following commands *[1]*:
 
 ``` bash
   REMOTE=$(git config --get remote.origin.url)
@@ -40,60 +48,72 @@ Run [clone-wiki.sh][clone-wiki.sh] to clone your repository's wiki using the fol
 
 After cloning, look for the default `Home.md` file under `wiki/`.
 
-## 3. Edit/Publish Your Wiki
 
-_From your wiki:_
+## 4. Edit & Publish Your Wiki
+
+_From your **wiki** repository:_
+
+Try this:
 
 ``` bash
   echo "" >> Home.md
   echo "Hello world" >> Home.md
+```
+
+then run [commit.sh][commit.sh]:
+
+``` bash
   git commit -a -m "Test"
+```
+
+and publish the page with [publish.sh][publish.sh]:
+
+``` bash
   git push -u origin master
 ```
 
 
+
 # Local Previews
-## 1. Clone **Gollum Bootstrap**
+## Requirements
 
-_From your project repository:_
+Knowledge of Ruby and installation of gems is required.  I recommend configuring your Ruby installation with [rbenv](https://github.com/sstephenson/rbenv).
 
-``` bash
-  git clone https://github.com/tub78/gollum-bootstrap.git gollum-bootstrap
-  echo "gollum-bootstrap" >> .gitignore
-```
+## 1. Install Gollum
 
+The recommended way to install the Ruby framework [Gollum][Gollum] is with [Bundler][Bundler].  Bundler is a Ruby package manager that installs Gollum via a set of Gems listed in [Gemfile][Gemfile].
 
-## 2. Install Gollum
+_From the gb directory:_
 
-The recommended way to install the Ruby framework [Gollum][Gollum] is with [Bundler][Bundler].  Bundler is a Ruby package manager that installs Gollum via a set of Gems listed in [Gemfile][https://github.com/tub78/gollum-bootstrap/blob/master/Gemfile].
-
-_From the gollum-bootstrap directory:_
-
- 1. Run [install-bundler.sh](https://github.com/tub78/gollum-bootstrap/blob/master/install-bundler.sh) to install Bundler.  This just executes the following command:
+Run [install-bundler.sh](https://github.com/tub78/gollum-bootstrap/blob/master/install-bundler.sh) to install Bundler.  This just executes the following command:
 
 ``` bash
   gem install bundler
 ```
 
- 2. Run [install-gollum.sh][install-gollum.sh] to install Gollum.  This executes the following commands:
+Next, run [install-gollum.sh][install-gollum.sh] to install Gollum.  This executes the following commands:
 
 ``` bash
-  bundle install --path vendor/bundle
-  bundle install --binstubs bin
+  bundle install --path ../vendor/bundle
+  bundle install --binstubs ../bin
+  echo "vendor/" >> ../.gitignore
+  echo "bin/" >> ../.gitignore
 ```
 
 
-## 3. View
+## 2. View
 
 _From your project repository:_
 
- 1. Run Gollum:
+Gollum only serves pages that have been committed to the repository.
+
+Run Gollum:
 
 ``` bash
-  gollum-bootstrap/bin/gollum wiki/
+  bin/gollum wiki/
 ```
 
- 2. Navigate to [http://localhost:4567](http://localhost:4567)
+Once the Gollum server is initialized, navigate to [http://localhost:4567](http://localhost:4567).
 
 
 **[1]**:
