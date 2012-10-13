@@ -38,7 +38,7 @@ _From your **project repo**:_
 
 _From your **project repo**:_
 
-Runs the following commands to clone the GitHub wiki. These commands are included in [clone-wiki.sh][clone-wiki.sh], which you can run instead. *[1]*
+Run the following commands to clone the GitHub wiki. These commands are included in [clone-wiki.sh][clone-wiki.sh], which you can run instead. *[1]*
 
 ``` bash
   REMOTE=$(git config --get remote.origin.url)
@@ -78,7 +78,7 @@ and publish the page with [publish.sh][publish.sh]:
 # Local Previews
 ## Requirements
 
- * Ruby installation including `gem` executable
+ 1. Ruby installation including `gem` executable
 
 ## 1. Install Gollum
 
