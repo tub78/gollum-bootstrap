@@ -84,7 +84,7 @@ and publish the page with [publish.sh][publish.sh]:
 
 The recommended way to install the Ruby framework [Gollum][Gollum] is with [Bundler][Bundler].  Bundler is a Ruby package manager that installs Gollum via a set of Gems listed in [Gemfile][Gemfile].  Knowledge of Ruby and installation of gems is required.  I recommend configuring your Ruby installation with [rbenv][rbenv].
 
-_From the **project repo**:_
+_From the **gb** directory:_
 
 Run [install-bundler.sh](https://github.com/tub78/gollum-bootstrap/blob/master/install-bundler.sh) to install Bundler.  This just executes the following command:
 
@@ -95,10 +95,10 @@ Run [install-bundler.sh](https://github.com/tub78/gollum-bootstrap/blob/master/i
 Next, run [install-gollum.sh][install-gollum.sh] to install Gollum, executing the following commands:
 
 ``` bash
-  bundle install --path vendor/bundle
-  bundle install --binstubs bin
-  echo "vendor/" >> .gitignore
-  echo "bin/" >> .gitignore
+  bundle install --path ../vendor/bundle
+  bundle install --binstubs ../bin
+  echo "vendor/" >> ../.gitignore
+  echo "bin/" >> ../.gitignore
 ```
 
 
