@@ -1,6 +1,7 @@
 
 [Bundler]: http://gembundler.com/
 [Gollum]: https://github.com/github/gollum
+[rbenv]: https://github.com/sstephenson/rbenv
 
 [clone-wiki.sh]: https://github.com/tub78/gollum-bootstrap/blob/master/clone-wiki.sh
 [install-bundler.sh]: https://github.com/tub78/gollum-bootstrap/blob/master/install-bundler.sh
@@ -25,7 +26,7 @@ _On your local system:_
 
 ## 2. Clone **Gollum Bootstrap**
 
-_From your project repository:_
+_From your **project repo**:_
 
 ``` bash
   git clone https://github.com/tub78/gollum-bootstrap.git gb
@@ -35,9 +36,9 @@ _From your project repository:_
 
 ## 3. Clone Your Wiki
 
-_From your project repository:_
+_From your **project repo**:_
 
-Run [clone-wiki.sh][clone-wiki.sh] to clone your repository's wiki using the following commands *[1]*:
+Runs the following commands to clone the GitHub wiki. These commands are included in [clone-wiki.sh][clone-wiki.sh], which you can run instead. *[1]*
 
 ``` bash
   REMOTE=$(git config --get remote.origin.url)
@@ -77,13 +78,13 @@ and publish the page with [publish.sh][publish.sh]:
 # Local Previews
 ## Requirements
 
-Knowledge of Ruby and installation of gems is required.  I recommend configuring your Ruby installation with [rbenv](https://github.com/sstephenson/rbenv).
+ * Ruby installation including `gem` executable
 
 ## 1. Install Gollum
 
-The recommended way to install the Ruby framework [Gollum][Gollum] is with [Bundler][Bundler].  Bundler is a Ruby package manager that installs Gollum via a set of Gems listed in [Gemfile][Gemfile].
+The recommended way to install the Ruby framework [Gollum][Gollum] is with [Bundler][Bundler].  Bundler is a Ruby package manager that installs Gollum via a set of Gems listed in [Gemfile][Gemfile].  Knowledge of Ruby and installation of gems is required.  I recommend configuring your Ruby installation with [rbenv][rbenv].
 
-_From the gb directory:_
+_From the **project repo**:_
 
 Run [install-bundler.sh](https://github.com/tub78/gollum-bootstrap/blob/master/install-bundler.sh) to install Bundler.  This just executes the following command:
 
@@ -91,35 +92,33 @@ Run [install-bundler.sh](https://github.com/tub78/gollum-bootstrap/blob/master/i
   gem install bundler
 ```
 
-Next, run [install-gollum.sh][install-gollum.sh] to install Gollum.  This executes the following commands:
+Next, run [install-gollum.sh][install-gollum.sh] to install Gollum, executing the following commands:
 
 ``` bash
-  bundle install --path ../vendor/bundle
-  bundle install --binstubs ../bin
-  echo "vendor/" >> ../.gitignore
-  echo "bin/" >> ../.gitignore
+  bundle install --path vendor/bundle
+  bundle install --binstubs bin
+  echo "vendor/" >> .gitignore
+  echo "bin/" >> .gitignore
 ```
 
 
 ## 2. View
 
-_From your project repository:_
+To view a local instance of your wiki, run gollum.  Once the Gollum server is initialized, navigate to [http://localhost:4567](http://localhost:4567).  Gollum only serves pages that have been committed to the repository.
 
-Gollum only serves pages that have been committed to the repository.
-
-Run Gollum:
+_From your **project repo**:_
 
 ``` bash
   bin/gollum wiki/
 ```
 
-Once the Gollum server is initialized, navigate to [http://localhost:4567](http://localhost:4567).
 
+### Notes
 
 **[1]**:
 You will get an error if you have not clicked on the "Wiki" tab under your GitHub repository.
 
- > fatal: https://github.com/USER/PROJECT.wiki.git/info/refs not found: did you run git update-server-info on the server?
+    fatal: https://github.com/USER/PROJECT.wiki.git/info/refs not found: did you run git update-server-info on the server?
 
 
 
