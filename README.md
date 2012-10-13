@@ -13,7 +13,7 @@
 ## Requirements
 
  1. Repository hosted on GitHub
- 2. Wiki has been initialized on GitHub
+ 2. Wiki initialized on GitHub
 
 ## 1. Clone Your Project Repository
 
